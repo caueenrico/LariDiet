@@ -2,6 +2,7 @@ import fastify from "fastify";
 import { usersRoutes } from "./routes/users";
 import cookie from "@fastify/cookie";
 import { mealsRoutes } from "./routes/meals";
+import { env } from "./env";
 
 export const app = fastify()
 
@@ -15,7 +16,7 @@ app.register(mealsRoutes, {
 })
 
 app.listen({
-  port: 3333
+  port: env.PORT
 }).then(() => {
-  console.log('o servidor está rodando !')
+  console.log('o servidor está rodando na porta ' + env.PORT)
 })
