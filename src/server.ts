@@ -16,7 +16,7 @@ app.register(mealsRoutes, {
 })
 
 app.listen({
-  host: ("RENDER" in process.env) ? '0.0.0.0' : 'localhost',
+  port: env.PORT
 }).then(() => {
   console.log('o servidor está rodando na porta ' + env.PORT)
 })
